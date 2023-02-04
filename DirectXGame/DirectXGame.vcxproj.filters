@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\CameraComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\Component.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\FogComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\LightComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\MeshComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\TerrainComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\TransformComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\WaterComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\Entity.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\ConstantBuffer.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\DeviceContext.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\GraphicsEngine.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\IndexBuffer.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\PixelShader.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\RenderSystem.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\ShaderInclude.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\SwapChain.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\Texture2D.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\VertexBuffer.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\VertexShader.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\DemoGame.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\main.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Game\Display.cpp">
+      <Filter>DX3D\Source\DX3D\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Game\Game.cpp">
+      <Filter>DX3D\Source\DX3D\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Game\World.cpp">
+      <Filter>DX3D\Source\DX3D\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Input\InputSystem.cpp">
+      <Filter>DX3D\Source\DX3D\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Window\Window.cpp">
+      <Filter>DX3D\Source\DX3D\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Game\Win32\Win32Game.cpp">
+      <Filter>DX3D\Source\DX3D\Game\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\Texture.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\ResourceManager.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\Resource.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\Mesh.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\Material.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\Entity\Player.cpp">
+      <Filter>Game\Entity</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DX3D\Vendor\DirectXTex\include\DirectXTex.h">
+      <Filter>DX3D\Vendor\DirectXTex\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Vendor\tinyobjloader\include\tiny_obj_loader.h">
+      <Filter>DX3D\Vendor\tinyobjloader\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\CameraComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\CommonShader.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\Component.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\ConstantBuffer.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\DemoGame.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\DeviceContext.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Game\Display.h">
+      <Filter>DX3D\Include\DX3D\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\Entity.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\FogComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Game\Game.h">
+      <Filter>DX3D\Include\DX3D\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\GraphicsEngine.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Includes.h">
+      <Filter>DX3D\Include\DX3D</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\IndexBuffer.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Input\InputSystem.h">
+      <Filter>DX3D\Include\DX3D\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\LightComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\Material.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\MaterialSlot.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Matrix4x4.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\Mesh.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\MeshComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\PixelShader.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Entity\Player.h">
+      <Filter>Game\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Point.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Prerequisites.h">
+      <Filter>DX3D\Include\DX3D</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\RenderSystem.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\ShaderInclude.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\SwapChain.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\VertexShader.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Rect.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Vector2D.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Vector3D.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Vector4D.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\Vertex.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Math\VertexMesh.h">
+      <Filter>DX3D\Include\DX3D\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\Resource.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\ResourceManager.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\Texture.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\TerrainComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\TransformComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\WaterComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\Texture2D.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\VertexBuffer.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Window\Window.h">
+      <Filter>DX3D\Include\DX3D\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Game\World.h">
+      <Filter>DX3D\Include\DX3D\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="DX3D">
+      <UniqueIdentifier>{e022b881-0921-4a31-a510-cbb9bdac06ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{905c0b0b-fdec-4e07-8f5d-881936e91d79}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include">
+      <UniqueIdentifier>{6a446d26-0d95-4b11-a2bd-6109d27b5304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source">
+      <UniqueIdentifier>{0613b06e-808e-4d6e-ba5b-47ca2106afce}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor">
+      <UniqueIdentifier>{a102c037-3534-421d-b798-02076c2ba004}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\Entity">
+      <UniqueIdentifier>{18726c19-79ca-4968-8457-77327cd17542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D">
+      <UniqueIdentifier>{b46d9800-f09e-4c90-bc0d-553eef4089f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D">
+      <UniqueIdentifier>{b6c22aa4-3be5-4c8a-b96f-cfeb0af358cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Entity">
+      <UniqueIdentifier>{190bcbb0-adb7-4f0d-bd03-218670920869}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Game">
+      <UniqueIdentifier>{6d482e82-030e-432a-8243-271d31d62329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Graphics">
+      <UniqueIdentifier>{450a8f50-0e62-401c-800f-0676c2c14b04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Input">
+      <UniqueIdentifier>{f44ad549-39f0-423c-8e78-3a1bae787282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Math">
+      <UniqueIdentifier>{1400dc1f-1979-41f6-bf29-300d44df681c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Resource">
+      <UniqueIdentifier>{f01f28a4-c135-4562-b840-76a98984432d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Include\DX3D\Window">
+      <UniqueIdentifier>{6814f200-9378-4736-8ba3-76c527fea96f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Entity">
+      <UniqueIdentifier>{73c18814-bf89-4f90-9088-74f78518dd29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Game">
+      <UniqueIdentifier>{6b9d82b7-dab6-4a83-854b-8da8dd205037}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Graphics">
+      <UniqueIdentifier>{9280535b-4d3f-416a-acd9-f15704707a1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Input">
+      <UniqueIdentifier>{5cc965a5-3a75-47e6-a6a1-55902b87556a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Resource">
+      <UniqueIdentifier>{b5a5668c-605a-4c29-bd87-1a9fc4bce48d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Window">
+      <UniqueIdentifier>{1a25f5d8-40f5-4aa4-bce3-c675c0e91299}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\DirectXTex">
+      <UniqueIdentifier>{b92ca751-bc06-433a-9db3-6c6fdb7b3d13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\tinyobjloader">
+      <UniqueIdentifier>{3707baed-c945-4348-a11f-166178821f62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\DirectXTex\include">
+      <UniqueIdentifier>{566e3356-9c23-4c18-b431-61af59e527f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\tinyobjloader\include">
+      <UniqueIdentifier>{6d2f757e-ed5a-490d-b235-6d997e265c5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Source\DX3D\Game\Win32">
+      <UniqueIdentifier>{a95987ea-1aa5-4af4-b658-0aac38d7d243}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
