@@ -82,9 +82,6 @@
     <ClCompile Include="DX3D\Source\DX3D\Window\Window.cpp">
       <Filter>DX3D\Source\DX3D\Window</Filter>
     </ClCompile>
-    <ClCompile Include="DX3D\Source\DX3D\Game\Win32\Win32Game.cpp">
-      <Filter>DX3D\Source\DX3D\Game\Win32</Filter>
-    </ClCompile>
     <ClCompile Include="DX3D\Source\DX3D\Resource\Texture.cpp">
       <Filter>DX3D\Source\DX3D\Resource</Filter>
     </ClCompile>
@@ -102,6 +99,9 @@
     </ClCompile>
     <ClCompile Include="Game\Entity\Player.cpp">
       <Filter>Game\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Game\Win32\Win32Game.cpp">
+      <Filter>DX3D\Source\DX3D\Game\Win32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
