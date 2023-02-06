@@ -241,6 +241,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="DX3D\Vendor\DirectXTex\include\DirectXTex.inl" />
+    <None Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.pdb" />
     <None Include="DX3D\Vendor\tinyobjloader\LICENSE" />
   </ItemGroup>
   <ItemGroup>

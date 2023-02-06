@@ -334,6 +334,9 @@
     <None Include="DX3D\Vendor\tinyobjloader\LICENSE">
       <Filter>DX3D\Vendor\tinyobjloader</Filter>
     </None>
+    <None Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.pdb">
+      <Filter>DX3D\Vendor\DirectXTex\lib</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Text Include="DX3D\Vendor\DirectXTex\LICENSE.txt">
