@@ -72,11 +72,11 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;$(IncludePath)</IncludePath>
-    <LibraryPath>DX3D/Vendor/DirectXTex/bin;$(LibraryPath)</LibraryPath>
+    <LibraryPath>DX3D/Vendor/DirectXTex/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;$(IncludePath)</IncludePath>
-    <LibraryPath>DX3D/Vendor/DirectXTex/bin;$(LibraryPath)</LibraryPath>
+    <LibraryPath>DX3D/Vendor/DirectXTex/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -238,6 +238,19 @@
     <ClInclude Include="DX3D\Include\DX3D\Graphics\ShaderInclude.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\TerrainComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\WaterComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="DX3D\Vendor\DirectXTex\include\DirectXTex.inl" />
+    <None Include="DX3D\Vendor\tinyobjloader\LICENSE" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="DX3D\Vendor\DirectXTex\LICENSE.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.lib" />
+    <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTexD.lib" />
+    <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTexD_x86.lib" />
+    <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTex_x86.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
