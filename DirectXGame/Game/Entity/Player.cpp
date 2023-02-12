@@ -19,6 +19,7 @@ void Player::OnUpdate(float delta_time)
 	const auto transform = GetTransform();
 	const auto input_system = GetInputSystem();
 
+	auto speed = 12.0f;
 	m_forward = 0.0f;
 	m_rightward = 0.0f;
 	m_upward = 0.0f;
@@ -53,6 +54,11 @@ void Player::OnUpdate(float delta_time)
 		m_upward = -1.0f;
 	}
 
+	if (input_system->IsKeyDown(Key::Shift))
+	{
+		speed *= 4;
+	}
+
 	const auto delta_pos = input_system->GetDeltaMousePosition();
 	auto rot = transform->GetRotation();
 	rot += Vector3D(delta_pos.y * 0.001f, delta_pos.x * 0.001f, 0);
@@ -62,8 +68,8 @@ void Player::OnUpdate(float delta_time)
 	transform->GetWorldMatrix(world);
 
 	auto pos = transform->GetPosition();
-	pos = pos + world.GetZDirection() * m_forward * delta_time * 12.0f;
-	pos = pos + world.GetXDirection() * m_rightward * delta_time * 12.0f;
-	pos = pos + world.GetYDirection() * m_upward * delta_time * 12.0f;
+	pos = pos + world.GetZDirection() * m_forward * delta_time * speed;
+	pos = pos + world.GetXDirection() * m_rightward * delta_time * speed;
+	pos = pos + world.GetYDirection() * m_upward * delta_time * speed;
 	transform->SetPosition(pos);
 }
