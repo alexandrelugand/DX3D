@@ -20,8 +20,10 @@ namespace DX3D
 		PixelShaderPtr CreatePixelShader(const wchar_t* full_path, const char* entry_point);
 		Texture2DPtr CreateTexture(const wchar_t* full_path);
 		Texture2DPtr CreateTexture(const Rect& size, Texture2D::Type type);
+		Font2DPtr CreateFont(const wchar_t* full_path);
 
 		void SetCullMode(const CullMode& cull_mode) const;
+		void ClearState();
 
 	private:
 		void InitRasterizerState();
@@ -55,5 +57,6 @@ namespace DX3D
 		friend class VertexShader;
 		friend class PixelShader;
 		friend class Texture2D;
+		friend class Font2D;
 	};
 }

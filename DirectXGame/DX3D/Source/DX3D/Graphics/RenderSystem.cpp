@@ -2,6 +2,7 @@
 #include <DX3D/Prerequisites.h>
 #include <DX3D/Graphics/ConstantBuffer.h>
 #include <DX3D/Graphics/DeviceContext.h>
+#include <DX3D/Graphics/Font2D.h>
 #include <DX3D/Graphics/IndexBuffer.h>
 #include <DX3D/Graphics/PixelShader.h>
 #include <DX3D/Graphics/RenderSystem.h>
@@ -105,6 +106,11 @@ namespace DX3D
 		return std::make_shared<Texture2D>(this, size, type);
 	}
 
+	Font2DPtr RenderSystem::CreateFont(const wchar_t* full_path)
+	{
+		return std::make_shared<Font2D>(this, full_path);
+	}
+
 	void RenderSystem::SetCullMode(const CullMode& cull_mode) const
 	{
 		if (cull_mode == CullMode::Front)
@@ -113,6 +119,12 @@ namespace DX3D
 			m_imm_context->RSSetState(m_cull_back_state.Get());
 		else if (cull_mode == CullMode::None)
 			m_imm_context->RSSetState(m_cull_none_state.Get());
+	}
+
+	void RenderSystem::ClearState()
+	{
+		m_imm_context->ClearState();
+		m_imm_context->OMSetBlendState(m_alpha_blend_state.Get(), nullptr, 0xffffffff);
 	}
 
 	void RenderSystem::InitRasterizerState()

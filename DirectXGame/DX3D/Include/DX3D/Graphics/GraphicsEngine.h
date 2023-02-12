@@ -25,5 +25,6 @@ namespace DX3D
 		std::set<TerrainComponent*> m_terrains;
 		std::set<WaterComponent*> m_waters;
 		std::set<FogComponent*> m_fogs;
+		std::set<TextComponent*> m_texts;
 	};
 }

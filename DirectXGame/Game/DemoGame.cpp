@@ -17,6 +17,8 @@ void DemoGame::OnCreate()
 
 	srand(static_cast<uint>(time(nullptr)));
 
+	FontUtility::CreateFont(L"Bahnschrift", 16, L"Assets\\Fonts\\");
+
 	const auto world = GetWorld();
 
 #pragma region SkyBox
@@ -187,6 +189,21 @@ void DemoGame::OnCreate()
 
 #pragma endregion
 
+#pragma region UI
+
+	auto font = GetResourceManager()->CreateResourceFromFile<Font>(L"Assets/Fonts/Bahnschrift.font");
+	m_infos = GetWorld()->CreateEntity<Entity>();
+	m_copyright = GetWorld()->CreateEntity<Entity>();
+	auto text = m_infos->CreateComponent<TextComponent>();
+	text->SetFont(font);
+	text->SetText(L"DX3D Game Engine");
+	m_infos->GetTransform()->SetPosition(Vector3D(10, 10, 0));
+	auto copyright = m_copyright->CreateComponent<TextComponent>();
+	copyright->SetFont(font);
+	copyright->SetText(L"LUGAND Alexandre. All right reserved");
+
+#pragma endregion
+
 	m_player = GetWorld()->CreateEntity<Player>();
 	GetInputSystem()->LockCursor(m_locked);
 }
@@ -196,6 +213,36 @@ void DemoGame::OnUpdate(float delta_time)
 	Game::OnUpdate(delta_time);
 
 	m_light->GetTransform()->SetRotation(Vector3D(0.707f, -3.14f, 0));
+	auto client_size = GetWorld()->GetGame()->GetDisplay()->GetClientSize();
+	auto text_component = m_infos->GetComponent<TextComponent>();
+
+	auto player_pos = m_player->GetTransform()->GetPosition();
+	auto player_rot = m_player->GetTransform()->GetRotation();
+	auto p = 180.0f / 3.14f;
+
+	auto infoText = std::wstringstream();
+	infoText << L"DX3D Game Engine\n\n";
+	infoText << L"FPS: " << static_cast<int>(1.0f / delta_time) << L"\n";
+	infoText << L"Screen size: W: " << client_size.Width() << L" H: " << client_size.Height() << L"\n";
+	infoText << L"Player position:"
+		<< L" X: " << static_cast<int>(player_pos.x)
+		<< L" Y: " << static_cast<int>(player_pos.y)
+		<< L" Z: " << static_cast<int>(player_pos.z)
+		<< L"\n";
+	infoText << L"Player rotation:"
+		<< L" X: " << static_cast<int>(player_rot.x * p)
+		<< L" Y: " << static_cast<int>(player_rot.y * p)
+		<< L" Z: " << static_cast<int>(player_rot.z * p)
+		<< L"\n";
+
+	text_component->SetText(infoText.str().c_str());
+
+	auto textBounds = m_copyright->GetComponent<TextComponent>()->GetBounds();
+	m_copyright->GetTransform()->SetPosition(Vector3D(
+		client_size.Width() - textBounds.Width() - 15.0f,
+		client_size.Height() - textBounds.Height() - 10.0f,
+		0
+	));
 
 	const auto input_system = GetInputSystem();
 	if (input_system->IsKeyUp(Key::P))

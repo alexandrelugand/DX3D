@@ -1,3 +1,4 @@
+#include <DX3D/Resource/Font.h>
 #include <DX3D/Resource/Material.h>
 #include <DX3D/Resource/Mesh.h>
 #include <DX3D/Resource/ResourceManager.h>
@@ -36,6 +37,8 @@ namespace DX3D
 			res = std::make_shared<Texture>(this, resource_path.c_str());
 		else if (ext.empty() || !ext.compare(L".hlsl") || !ext.compare(L".fx"))
 			res = std::make_shared<Material>(this, resource_path.c_str());
+		else if (!ext.compare(L".font"))
+			res = std::make_shared<Font>(this, resource_path.c_str());
 
 		if (res)
 		{

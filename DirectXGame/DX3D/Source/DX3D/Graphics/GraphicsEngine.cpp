@@ -4,21 +4,23 @@
 #include <DX3D/Entity/LightComponent.h>
 #include <DX3D/Entity/MeshComponent.h>
 #include <DX3D/Entity/TerrainComponent.h>
+#include <DX3D/Entity/TextComponent.h>
 #include <DX3D/Entity/TransformComponent.h>
 #include <DX3D/Entity/WaterComponent.h>
 #include <DX3D/Game/Display.h>
 #include <DX3D/Game/Game.h>
 #include <DX3D/Graphics/CommonShader.h>
 #include <DX3D/Graphics/DeviceContext.h>
+#include <DX3D/Graphics/Font2D.h>
 #include <DX3D/Graphics/GraphicsEngine.h>
 #include <DX3D/Graphics/IndexBuffer.h>
 #include <DX3D/Graphics/RenderSystem.h>
 #include <DX3D/Graphics/SwapChain.h>
 #include <DX3D/Math/Matrix4x4.h>
+#include <DX3D/Resource/Font.h>
 #include <DX3D/Resource/Material.h>
 #include <DX3D/Resource/Mesh.h>
 #include <DX3D/Resource/Texture.h>
-
 
 namespace DX3D
 {
@@ -35,6 +37,7 @@ namespace DX3D
 		auto swap_chain = m_game->GetDisplay()->GetSwapChain();
 		auto win_size = m_game->GetDisplay()->GetClientSize();
 		auto context = m_render->GetImmediateDeviceContext();
+		m_render->ClearState();
 
 		ConstantData constantData = {};
 		constantData.time = m_game->GetTotalTime();
@@ -146,13 +149,26 @@ namespace DX3D
 			context->SetVertexShader(w->m_vs);
 			context->SetPixelShader(w->m_ps);
 
-			Texture2DPtr terrainTextures[1];
-			terrainTextures[0] = w->GetWaveHeightMap()->GetTexture();
-			/*	terrainTextures[1] = t->GetGroundMap()->GetTexture();
-				terrainTextures[2] = t->GetWallMap()->GetTexture();*/
-			context->SetTexture(terrainTextures, 1);
+			Texture2DPtr waterTextures[1];
+			waterTextures[0] = w->GetWaveHeightMap()->GetTexture();
+			context->SetTexture(waterTextures, 1);
 
 			context->DrawIndexedTriangleList(w->m_mesh_ib->GetSizeIndexList(), 0, 0);
+		}
+
+		//Rendering UI components
+		//-----------------------
+
+		for (auto t : m_texts)
+		{
+			auto transform = t->GetEntity()->GetTransform();
+			auto pos = transform->GetPosition();
+
+			auto font = t->GetFont()->GetFont();
+
+			font->m_batch->Begin();
+			font->m_font->DrawString(font->m_batch.get(), t->GetText(), DirectX::XMFLOAT2(pos.x, pos.y));
+			font->m_batch->End();
 		}
 
 		swap_chain->Present(true);
@@ -172,6 +188,8 @@ namespace DX3D
 			m_waters.emplace(water);
 		else if (auto fog = dynamic_cast<FogComponent*>(component))
 			m_fogs.emplace(fog);
+		else if (auto text = dynamic_cast<TextComponent*>(component))
+			m_texts.emplace(text);
 	}
 
 	void GraphicsEngine::RemoveComponent(Component* component)
@@ -188,5 +206,7 @@ namespace DX3D
 			m_waters.erase(water);
 		else if (auto fog = dynamic_cast<FogComponent*>(component))
 			m_fogs.erase(fog);
+		else if (auto text = dynamic_cast<TextComponent*>(component))
+			m_texts.erase(text);
 	}
 }

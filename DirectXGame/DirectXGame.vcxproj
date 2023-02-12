@@ -24,6 +24,7 @@
     <ProjectGuid>{29135698-98cb-46cb-b149-89a843ed3dce}</ProjectGuid>
     <RootNamespace>GameEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName> DX3D</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -71,12 +72,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;$(IncludePath)</IncludePath>
-    <LibraryPath>DX3D/Vendor/DirectXTex/lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;$(IncludePath)</IncludePath>
+    <LibraryPath>DX3D/Vendor/DirectXTex/lib;DX3D/Vendor/DirectXTK/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;$(IncludePath)</IncludePath>
-    <LibraryPath>DX3D/Vendor/DirectXTex/lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;$(IncludePath)</IncludePath>
+    <LibraryPath>DX3D/Vendor/DirectXTex/lib;DX3D/Vendor/DirectXTK/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -123,7 +124,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;DirectXTexD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;DirectXTexD.lib;DirectXTKD.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <FxCompile>
       <AdditionalIncludeDirectories>Assets/Shaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -149,7 +150,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>DebugFastLink</GenerateDebugInformation>
-      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;DirectXTex.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>d3d11.lib;D3DCompiler.lib;DirectXTex.lib;DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <FxCompile>
       <AdditionalIncludeDirectories>Assets/Shaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
@@ -179,6 +180,9 @@
     <ClCompile Include="DX3D\Source\DX3D\Game\Game.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\Entity.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\FogComponent.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\Font2D.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Resource\Font.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Resource\FontUtility.cpp" />
     <ClCompile Include="Game\main.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Resource\Texture.cpp" />
     <ClCompile Include="Game\DemoGame.cpp" />
@@ -190,6 +194,7 @@
     <ClCompile Include="DX3D\Source\DX3D\Graphics\ShaderInclude.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\TerrainComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\WaterComponent.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Entity\TextComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Include\DX3D\Entity\CameraComponent.h" />
@@ -228,7 +233,13 @@
     <ClInclude Include="DX3D\Include\DX3D\Entity\Entity.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\FogComponent.h" />
     <ClInclude Include="DX3D\Vendor\DirectXTex\include\DirectXTex.h" />
+    <ClInclude Include="DX3D\Vendor\DirectXTK\include\SimpleMath.h" />
+    <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteBatch.h" />
+    <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteFont.h" />
     <ClInclude Include="DX3D\Vendor\tinyobjloader\include\tiny_obj_loader.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\Font2D.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Resource\Font.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Resource\FontUtility.h" />
     <ClInclude Include="Game\DemoGame.h" />
     <ClInclude Include="DX3D\Include\DX3D\Game\World.h" />
     <ClInclude Include="Game\Entity\Player.h" />
@@ -238,10 +249,15 @@
     <ClInclude Include="DX3D\Include\DX3D\Graphics\ShaderInclude.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\TerrainComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\WaterComponent.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Entity\TextComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DX3D\Vendor\DirectXTex\include\DirectXTex.inl" />
     <None Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.pdb" />
+    <None Include="DX3D\Vendor\DirectXTK\lib\DirectXTKD.pdb" />
+    <None Include="DX3D\Vendor\DirectXTK\lib\MakeSpriteFont.exe" />
+    <None Include="DX3D\Vendor\DirectXTK\include\SimpleMath.inl" />
+    <None Include="DX3D\Vendor\DirectXTK\LICENSE" />
     <None Include="DX3D\Vendor\tinyobjloader\LICENSE" />
   </ItemGroup>
   <ItemGroup>
@@ -252,6 +268,8 @@
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTexD.lib" />
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTexD_x86.lib" />
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTex_x86.lib" />
+    <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTK.lib" />
+    <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTKD.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

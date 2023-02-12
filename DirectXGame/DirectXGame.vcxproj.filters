@@ -103,6 +103,18 @@
     <ClCompile Include="DX3D\Source\DX3D\Game\Win32\Win32Game.cpp">
       <Filter>DX3D\Source\DX3D\Game\Win32</Filter>
     </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Entity\TextComponent.cpp">
+      <Filter>DX3D\Source\DX3D\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Graphics\Font2D.cpp">
+      <Filter>DX3D\Source\DX3D\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\Font.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Resource\FontUtility.cpp">
+      <Filter>DX3D\Source\DX3D\Resource</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Vendor\DirectXTex\include\DirectXTex.h">
@@ -243,6 +255,27 @@
     <ClInclude Include="DX3D\Include\DX3D\Game\World.h">
       <Filter>DX3D\Include\DX3D\Game</Filter>
     </ClInclude>
+    <ClInclude Include="DX3D\Vendor\DirectXTK\include\SimpleMath.h">
+      <Filter>DX3D\Vendor\DirectXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteBatch.h">
+      <Filter>DX3D\Vendor\DirectXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteFont.h">
+      <Filter>DX3D\Vendor\DirectXTK\include</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Entity\TextComponent.h">
+      <Filter>DX3D\Include\DX3D\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Graphics\Font2D.h">
+      <Filter>DX3D\Include\DX3D\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\Font.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="DX3D\Include\DX3D\Resource\FontUtility.h">
+      <Filter>DX3D\Include\DX3D\Resource</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="DX3D">
@@ -326,6 +359,18 @@
     <Filter Include="DX3D\Vendor\DirectXTex\lib">
       <UniqueIdentifier>{f4cfed58-b24a-4803-a37c-e56645195a17}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DX3D\Vendor\DirectXTK">
+      <UniqueIdentifier>{4862b5f6-61e6-4853-8ccb-44efd111985a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\DirectXTK\lib">
+      <UniqueIdentifier>{64e450ef-f925-4715-a449-23f422bee466}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\DirectXTK\bin">
+      <UniqueIdentifier>{1bbb6cc6-dcd3-4894-b61c-47d6ecaf7169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DX3D\Vendor\DirectXTK\include">
+      <UniqueIdentifier>{53b39f99-35e6-4745-a67b-ae322b19f68b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="DX3D\Vendor\DirectXTex\include\DirectXTex.inl">
@@ -336,6 +381,18 @@
     </None>
     <None Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.pdb">
       <Filter>DX3D\Vendor\DirectXTex\lib</Filter>
+    </None>
+    <None Include="DX3D\Vendor\DirectXTK\lib\DirectXTKD.pdb">
+      <Filter>DX3D\Vendor\DirectXTK\lib</Filter>
+    </None>
+    <None Include="DX3D\Vendor\DirectXTK\lib\MakeSpriteFont.exe">
+      <Filter>DX3D\Vendor\DirectXTK\bin</Filter>
+    </None>
+    <None Include="DX3D\Vendor\DirectXTK\LICENSE">
+      <Filter>DX3D\Vendor\DirectXTK</Filter>
+    </None>
+    <None Include="DX3D\Vendor\DirectXTK\include\SimpleMath.inl">
+      <Filter>DX3D\Vendor\DirectXTK\include</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
@@ -355,6 +412,12 @@
     </Library>
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTexD_x86.lib">
       <Filter>DX3D\Vendor\DirectXTex\lib</Filter>
+    </Library>
+    <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTK.lib">
+      <Filter>DX3D\Vendor\DirectXTK\lib</Filter>
+    </Library>
+    <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTKD.lib">
+      <Filter>DX3D\Vendor\DirectXTK\lib</Filter>
     </Library>
   </ItemGroup>
 </Project>

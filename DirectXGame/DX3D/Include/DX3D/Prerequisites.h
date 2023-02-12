@@ -12,7 +12,9 @@
 #include <map>
 #include <memory>
 #include <ranges>
+#include <regex>
 #include <set>
+#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <thread>
@@ -21,6 +23,7 @@
 
 #include <d3d11.h>
 #include <d3dcompiler.h>
+#include <SpriteFont.h>
 #include <Windows.h>
 #include <wrl.h>
 
@@ -30,9 +33,12 @@
 #include <DX3D/Math/Vector3D.h>
 #include <DX3D/Math/VertexMesh.h>
 
+#undef CreateFont
+
 namespace DX3D
 {
 	using namespace Microsoft::WRL;
+	using namespace DirectX::DX11;
 
 	class SwapChain;
 	class DeviceContext;
@@ -42,12 +48,14 @@ namespace DX3D
 	class VertexShader;
 	class PixelShader;
 	class Texture2D;
+	class Font2D;
 	class RenderSystem;
 
 	class Resource;
 	class Texture;
 	class Mesh;
 	class Material;
+	class Font;
 
 	class Window;
 	class Display;
@@ -65,6 +73,7 @@ namespace DX3D
 	class TerrainComponent;
 	class WaterComponent;
 	class FogComponent;
+	class TextComponent;
 
 	class ResourceManager;
 	class TextureManager;
@@ -78,10 +87,12 @@ namespace DX3D
 	using VertexShaderPtr = std::shared_ptr<VertexShader>;
 	using PixelShaderPtr = std::shared_ptr<PixelShader>;
 	using Texture2DPtr = std::shared_ptr<Texture2D>;
+	using Font2DPtr = std::shared_ptr<Font2D>;
 	using ResourcePtr = std::shared_ptr<Resource>;
 	using TexturePtr = std::shared_ptr<Texture>;
 	using MeshPtr = std::shared_ptr<Mesh>;
 	using MaterialPtr = std::shared_ptr<Material>;
+	using FontPtr = std::shared_ptr<Font>;
 	using EntityPtr = std::unique_ptr<Entity>;
 	using ComponentPtr = std::unique_ptr<Component>;
 

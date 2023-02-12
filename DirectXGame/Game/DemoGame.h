@@ -14,11 +14,12 @@ protected:
 	void OnUpdate(float delta_time) override;
 
 private:
-	Player* m_player = nullptr;
-
 	float m_elapsed_seconds = 0.0f;
 	bool m_locked = true;
 	bool m_fullscreen = false;
 
 	DX3D::Entity* m_light = nullptr;
+	DX3D::Entity* m_player = nullptr;
+	DX3D::Entity* m_infos = nullptr;
+	DX3D::Entity* m_copyright = nullptr;
 };

@@ -7,9 +7,12 @@
 #include <DX3D/Entity/LightComponent.h>
 #include <DX3D/Entity/MeshComponent.h>
 #include <DX3D/Entity/TerrainComponent.h>
+#include <DX3D/Entity/TextComponent.h>
 #include <DX3D/Entity/TransformComponent.h>
 #include <DX3D/Entity/WaterComponent.h>
 
+#include <DX3D/Resource/Font.h>
+#include <DX3D/Resource/FontUtility.h>
 #include <DX3D/Resource/Material.h>
 #include <DX3D/Resource/Mesh.h>
 #include <DX3D/Resource/ResourceManager.h>
