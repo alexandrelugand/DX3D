@@ -121,6 +121,14 @@ namespace DX3D
 			m_imm_context->RSSetState(m_cull_none_state.Get());
 	}
 
+	void RenderSystem::SetWireFrameMode(const bool wire_frame) const
+	{
+		if (wire_frame)
+			m_imm_context->RSSetState(m_wire_frame_state.Get());
+		else
+			m_imm_context->RSSetState(m_cull_front_state.Get());
+	}
+
 	void RenderSystem::ClearState()
 	{
 		m_imm_context->ClearState();
@@ -130,6 +138,13 @@ namespace DX3D
 	void RenderSystem::InitRasterizerState()
 	{
 		D3D11_RASTERIZER_DESC desc = {};
+		desc.CullMode = D3D11_CULL_NONE;
+		desc.DepthClipEnable = false;
+		desc.FrontCounterClockwise = false;
+		desc.FillMode = D3D11_FILL_WIREFRAME;
+
+		m_d3d_device->CreateRasterizerState(&desc, &m_wire_frame_state);
+
 		desc.CullMode = D3D11_CULL_FRONT;
 		desc.DepthClipEnable = true;
 		desc.FillMode = D3D11_FILL_SOLID;

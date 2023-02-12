@@ -23,6 +23,7 @@ namespace DX3D
 		Font2DPtr CreateFont(const wchar_t* full_path);
 
 		void SetCullMode(const CullMode& cull_mode) const;
+		void SetWireFrameMode(bool wire_frame) const;
 		void ClearState();
 
 	private:
@@ -42,6 +43,7 @@ namespace DX3D
 		ComPtr<ID3D11VertexShader> m_vs = nullptr;
 		ComPtr<ID3D11PixelShader> m_ps = nullptr;
 
+		ComPtr<ID3D11RasterizerState> m_wire_frame_state = nullptr;
 		ComPtr<ID3D11RasterizerState> m_cull_front_state = nullptr;
 		ComPtr<ID3D11RasterizerState> m_cull_back_state = nullptr;
 		ComPtr<ID3D11RasterizerState> m_cull_none_state = nullptr;

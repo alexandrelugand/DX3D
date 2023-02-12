@@ -38,6 +38,7 @@ namespace DX3D
 		auto win_size = m_game->GetDisplay()->GetClientSize();
 		auto context = m_render->GetImmediateDeviceContext();
 		m_render->ClearState();
+		m_render->SetWireFrameMode(m_wire_frame);
 
 		ConstantData constantData = {};
 		constantData.time = m_game->GetTotalTime();
@@ -91,7 +92,9 @@ namespace DX3D
 					break;
 
 				const auto material = materials[i];
-				m_render->SetCullMode(material->GetCullMode());
+				if (!m_wire_frame)
+					m_render->SetCullMode(material->GetCullMode());
+
 				material->SetData(&constantData, sizeof(ConstantData));
 				context->SetConstantBuffer(material->m_cb);
 				context->SetVertexShader(material->m_vs);
@@ -116,7 +119,8 @@ namespace DX3D
 			context->SetVertexBuffer(t->m_mesh_vb);
 			context->SetIndexBuffer(t->m_mesh_ib);
 
-			m_render->SetCullMode(CullMode::Back);
+			if (!m_wire_frame)
+				m_render->SetCullMode(CullMode::Back);
 			t->UpdateData(&constantData, sizeof(ConstantData));
 			context->SetConstantBuffer(t->m_cb);
 
@@ -142,7 +146,8 @@ namespace DX3D
 			context->SetVertexBuffer(w->m_mesh_vb);
 			context->SetIndexBuffer(w->m_mesh_ib);
 
-			m_render->SetCullMode(CullMode::Back);
+			if (!m_wire_frame)
+				m_render->SetCullMode(CullMode::Back);
 			w->UpdateData(&constantData, sizeof(ConstantData));
 			context->SetConstantBuffer(w->m_cb);
 

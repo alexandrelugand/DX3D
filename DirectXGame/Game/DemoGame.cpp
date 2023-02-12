@@ -213,7 +213,7 @@ void DemoGame::OnUpdate(float delta_time)
 	Game::OnUpdate(delta_time);
 
 	m_light->GetTransform()->SetRotation(Vector3D(0.707f, -3.14f, 0));
-	auto client_size = GetWorld()->GetGame()->GetDisplay()->GetClientSize();
+	auto client_size = GetDisplay()->GetClientSize();
 	auto text_component = m_infos->GetComponent<TextComponent>();
 
 	auto player_pos = m_player->GetTransform()->GetPosition();
@@ -252,11 +252,15 @@ void DemoGame::OnUpdate(float delta_time)
 	}
 	else if (input_system->IsKeyUp(Key::Escape))
 	{
-		GetWorld()->GetGame()->Quit();
+		Quit();
 	}
 	else if (input_system->IsKeyUp(Key::F1))
 	{
 		m_fullscreen = !m_fullscreen;
-		GetWorld()->GetGame()->GetDisplay()->SetFullScreen(m_fullscreen);
+		GetDisplay()->SetFullScreen(m_fullscreen);
+	}
+	else if (input_system->IsKeyUp(Key::F2))
+	{
+		GetGraphicsEngine()->SetWireFrameMode(!GetGraphicsEngine()->GetWireFrameMode());
 	}
 }
