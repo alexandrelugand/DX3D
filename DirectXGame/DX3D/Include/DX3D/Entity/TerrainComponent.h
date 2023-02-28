@@ -13,7 +13,7 @@ namespace DX3D
 		void SetHeightMap(const TexturePtr& height_map) { m_height_map = height_map; }
 		const TexturePtr& GetHeightMap() { return m_height_map; }
 
-		void SetGroupMap(const TexturePtr& ground_map) { m_ground_map = ground_map; }
+		void SetGroundMap(const TexturePtr& ground_map) { m_ground_map = ground_map; }
 		const TexturePtr& GetGroundMap() { return m_ground_map; }
 
 		void SetWallMap(const TexturePtr& wall_map) { m_wall_map = wall_map; }
