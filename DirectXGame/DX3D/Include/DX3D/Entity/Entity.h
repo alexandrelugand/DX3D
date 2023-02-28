@@ -42,10 +42,14 @@ namespace DX3D
 
 		void RemoveComponent(size_t typeId);
 
+		const std::string& GetName() { return m_name; }
+		void SetName(const std::string& name) { m_name = name; }
+
 	protected:
 		size_t m_typeId = 0;
 		World* m_world = nullptr;
 		std::map<size_t, ComponentPtr> m_components;
+		std::string m_name{};
 		TransformComponent* m_transform = nullptr;
 
 		void CreateComponentInternal(Component* component, size_t typeId);
