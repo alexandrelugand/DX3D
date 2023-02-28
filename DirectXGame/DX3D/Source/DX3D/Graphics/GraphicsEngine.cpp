@@ -168,11 +168,11 @@ namespace DX3D
 		{
 			auto transform = t->GetEntity()->GetTransform();
 			auto pos = transform->GetPosition();
-
+			auto color = t->GetColor();
 			auto font = t->GetFont()->GetFont();
 
 			font->m_batch->Begin();
-			font->m_font->DrawString(font->m_batch.get(), t->GetText(), DirectX::XMFLOAT2(pos.x, pos.y));
+			font->m_font->DrawString(font->m_batch.get(), t->GetText(), DirectX::XMFLOAT2(pos.x, pos.y), DirectX::XMVECTORF32({color.x, color.y, color.z, color.w}));
 			font->m_batch->End();
 		}
 

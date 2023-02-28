@@ -16,6 +16,9 @@ namespace DX3D
 		const wchar_t* GetText() { return m_text.c_str(); }
 		void SetText(const wchar_t* text) { m_text = text; }
 
+		const Vector4D& GetColor() { return m_color; }
+		void SetColor(const Vector4D& color) { m_color = color; }
+
 		Rect GetBounds();
 
 	protected:
@@ -23,6 +26,7 @@ namespace DX3D
 
 	private:
 		std::wstring m_text;
+		Vector4D m_color = Vector4D(1, 1, 1, 1);
 		FontPtr m_font = nullptr;
 	};
 }

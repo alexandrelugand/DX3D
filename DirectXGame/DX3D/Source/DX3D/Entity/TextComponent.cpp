@@ -2,10 +2,9 @@
 #include <DX3D/Entity/TextComponent.h>
 #include <DX3D/Game/Game.h>
 #include <DX3D/Game/World.h>
+#include <DX3D/Graphics/Font2D.h>
 #include <DX3D/Graphics/GraphicsEngine.h>
-
-#include "../../../Include/DX3D/Graphics/Font2D.h"
-#include "../../../Include/DX3D/Resource/Font.h"
+#include <DX3D/Resource/Font.h>
 
 namespace DX3D
 {
