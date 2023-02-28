@@ -18,8 +18,7 @@ private:
 	bool m_locked = true;
 	bool m_fullscreen = false;
 
-	DX3D::Entity* m_light = nullptr;
 	DX3D::Entity* m_player = nullptr;
 	DX3D::Entity* m_infos = nullptr;
-	DX3D::Entity* m_copyright = nullptr;
+	DX3D::Entity* m_version_info = nullptr;
 };

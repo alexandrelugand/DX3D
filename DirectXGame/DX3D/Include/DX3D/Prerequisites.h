@@ -1,6 +1,7 @@
 // ReSharper disable CppUnusedIncludeDirective
 // ReSharper disable CppClangTidyBugproneMacroParentheses
 #pragma once
+
 #include <cassert>
 #include <chrono>
 #include <codecvt>
@@ -23,6 +24,7 @@
 
 #include <d3d11.h>
 #include <d3dcompiler.h>
+#include <json.hpp>
 #include <SpriteFont.h>
 #include <Windows.h>
 #include <wrl.h>
@@ -39,6 +41,7 @@ namespace DX3D
 {
 	using namespace Microsoft::WRL;
 	using namespace DirectX::DX11;
+	using json = nlohmann::json;
 
 	class SwapChain;
 	class DeviceContext;
@@ -79,6 +82,14 @@ namespace DX3D
 	class TextureManager;
 	class MeshManager;
 
+	class SceneManager;
+	class ISceneLoaderVisitor;
+	class RootLoader;
+	template <class T>
+	class Loader;
+	template <class T>
+	class PtrLoader;
+
 	using SwapChainPtr = std::shared_ptr<SwapChain>;
 	using DeviceContextPtr = std::shared_ptr<DeviceContext>;
 	using VertexBufferPtr = std::shared_ptr<VertexBuffer>;
@@ -95,6 +106,15 @@ namespace DX3D
 	using FontPtr = std::shared_ptr<Font>;
 	using EntityPtr = std::unique_ptr<Entity>;
 	using ComponentPtr = std::unique_ptr<Component>;
+
+	using EntityLoader = Loader<Entity>;
+	using MeshComponentLoader = Loader<MeshComponent>;
+	using LightComponentLoader = Loader<LightComponent>;
+	using TerrainComponentLoader = Loader<TerrainComponent>;
+	using WaterComponentLoader = Loader<WaterComponent>;
+	using FogComponentLoader = Loader<FogComponent>;
+	using MaterialLoader = PtrLoader<MaterialPtr>;
+	using TransformComponentLoader = Loader<TransformComponent>;
 
 	using uint = unsigned int;
 
@@ -204,7 +224,12 @@ static const char* UnicodeToChar(const wchar_t* str)
 	return std::wstring_convert<std::codecvt_utf8<wchar_t>>().to_bytes(str).c_str(); // NOLINT(clang-diagnostic-deprecated-declarations, clang-diagnostic-return-stack-address)
 }
 
-static const std::filesystem::path ResolvePath(const wchar_t* base_dir, const wchar_t* file, bool raise_exception = false)
+static std::wstring StringToUnicode(const std::string& str)
+{
+	return std::wstring(str.begin(), str.end());
+}
+
+static std::filesystem::path ResolvePath(const wchar_t* base_dir, const wchar_t* file, bool raise_exception = false)
 {
 	const std::filesystem::path base_dir_path = base_dir;
 	const std::filesystem::directory_entry base_dir_entry(base_dir_path);

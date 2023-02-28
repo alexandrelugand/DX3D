@@ -17,6 +17,7 @@ namespace DX3D
 		ResourceManager* GetResourceManager() const { return m_resource_manager.get(); }
 		InputSystem* GetInputSystem() const { return m_input_system.get(); }
 		Display* GetDisplay() const { return m_display.get(); }
+		SceneManager* GetSceneManager() const { return m_scene_manager.get(); }
 
 		float GetTotalTime() const { return m_total_time; }
 
@@ -35,6 +36,7 @@ namespace DX3D
 		std::unique_ptr<ResourceManager> m_resource_manager;
 		std::unique_ptr<InputSystem> m_input_system;
 		std::unique_ptr<World> m_world;
+		std::unique_ptr<SceneManager> m_scene_manager;
 
 		bool m_isRunning = true;
 		float m_total_time = 0.0f;

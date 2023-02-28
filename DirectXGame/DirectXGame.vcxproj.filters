@@ -115,6 +115,9 @@
     <ClCompile Include="DX3D\Source\DX3D\Resource\FontUtility.cpp">
       <Filter>DX3D\Source\DX3D\Resource</Filter>
     </ClCompile>
+    <ClCompile Include="DX3D\Source\DX3D\Scene\SceneManager.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Scene\RootLoader.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Scene\SceneLoaderVisitor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Vendor\DirectXTex\include\DirectXTex.h">
@@ -276,6 +279,15 @@
     <ClInclude Include="DX3D\Include\DX3D\Resource\FontUtility.h">
       <Filter>DX3D\Include\DX3D\Resource</Filter>
     </ClInclude>
+    <ClInclude Include="DX3D\Vendor\Nlohmann\include\json.hpp" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\SceneManager.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\RootLoader.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\ISceneLoaderVisitor.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\ILoader.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\SceneLoaderVisitor.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Version.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\Loader.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="DX3D">
@@ -394,6 +406,8 @@
     <None Include="DX3D\Vendor\DirectXTK\include\SimpleMath.inl">
       <Filter>DX3D\Vendor\DirectXTK\include</Filter>
     </None>
+    <None Include="DX3D\Vendor\Nlohmann\LICENSE.MIT" />
+    <None Include="Version.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DX3D\Vendor\DirectXTex\LICENSE.txt">
@@ -419,5 +433,8 @@
     <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTKD.lib">
       <Filter>DX3D\Vendor\DirectXTK\lib</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DX3D.rc" />
   </ItemGroup>
 </Project>

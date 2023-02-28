@@ -72,11 +72,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;$(IncludePath)</IncludePath>
+    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;DX3D/Vendor/Nlohmann/include;$(IncludePath)</IncludePath>
     <LibraryPath>DX3D/Vendor/DirectXTex/lib;DX3D/Vendor/DirectXTK/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;$(IncludePath)</IncludePath>
+    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;DX3D/Vendor/Nlohmann/include;$(IncludePath)</IncludePath>
     <LibraryPath>DX3D/Vendor/DirectXTex/lib;DX3D/Vendor/DirectXTK/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -120,6 +120,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,6 +161,8 @@
     <ClCompile Include="DX3D\Source\DX3D\Entity\CameraComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\Component.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Game\Display.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Scene\SceneLoaderVisitor.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Scene\SceneManager.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Game\Win32\Win32Game.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Graphics\ConstantBuffer.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Graphics\DeviceContext.cpp" />
@@ -195,10 +198,16 @@
     <ClCompile Include="DX3D\Source\DX3D\Entity\TerrainComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\WaterComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\TextComponent.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Scene\RootLoader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Include\DX3D\Entity\CameraComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\Component.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\ILoader.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\ISceneLoaderVisitor.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\Loader.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\SceneLoaderVisitor.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\SceneManager.h" />
     <ClInclude Include="DX3D\Include\DX3D\Graphics\CommonShader.h" />
     <ClInclude Include="DX3D\Include\DX3D\Includes.h" />
     <ClInclude Include="DX3D\Include\DX3D\Game\Display.h" />
@@ -236,6 +245,7 @@
     <ClInclude Include="DX3D\Vendor\DirectXTK\include\SimpleMath.h" />
     <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteBatch.h" />
     <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteFont.h" />
+    <ClInclude Include="DX3D\Vendor\Nlohmann\include\json.hpp" />
     <ClInclude Include="DX3D\Vendor\tinyobjloader\include\tiny_obj_loader.h" />
     <ClInclude Include="DX3D\Include\DX3D\Graphics\Font2D.h" />
     <ClInclude Include="DX3D\Include\DX3D\Resource\Font.h" />
@@ -250,6 +260,9 @@
     <ClInclude Include="DX3D\Include\DX3D\Entity\TerrainComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\WaterComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\TextComponent.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Scene\RootLoader.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Version.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DX3D\Vendor\DirectXTex\include\DirectXTex.inl" />
@@ -258,7 +271,9 @@
     <None Include="DX3D\Vendor\DirectXTK\lib\MakeSpriteFont.exe" />
     <None Include="DX3D\Vendor\DirectXTK\include\SimpleMath.inl" />
     <None Include="DX3D\Vendor\DirectXTK\LICENSE" />
+    <None Include="DX3D\Vendor\Nlohmann\LICENSE.MIT" />
     <None Include="DX3D\Vendor\tinyobjloader\LICENSE" />
+    <None Include="Version.rc2" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="DX3D\Vendor\DirectXTex\LICENSE.txt" />
@@ -270,6 +285,9 @@
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTex_x86.lib" />
     <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTK.lib" />
     <Library Include="DX3D\Vendor\DirectXTK\lib\DirectXTKD.lib" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="DX3D.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
