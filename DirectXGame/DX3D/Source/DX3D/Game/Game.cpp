@@ -16,6 +16,7 @@ namespace DX3D
 		m_world = std::make_unique<World>(this);
 
 		m_input_system->SetLockArea(m_display->GetClientSize());
+		m_version = L"Version " + StringToUnicode(DX3D_VERSION);
 	}
 
 	Game::~Game() {}

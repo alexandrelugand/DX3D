@@ -27,6 +27,8 @@ namespace DX3D
 
 		virtual void OnDisplaySize(const Rect& size);
 
+		std::wstring m_version;
+
 	private:
 		std::unique_ptr<GraphicsEngine> m_graphics_engine;
 		std::unique_ptr<Display> m_display;
