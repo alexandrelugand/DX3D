@@ -104,38 +104,6 @@
         },
         {
             "type": "Entity",
-            "name": "Statue",
-            "components": [
-                {
-                    "type": "Mesh",
-                    "path": "Assets/Meshes/Winged_Victory.obj",
-                    "materials": [
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/sand.jpg"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "transform": {
-                "position": {
-                    "x": 145,
-                    "y": 24.4,
-                    "z": 140.5
-                },
-                "scale": {
-                    "x": 0.009,
-                    "y": 0.009,
-                    "z": 0.009
-                }
-            }
-        },
-        {
-            "type": "Entity",
             "name": "House",
             "components": [
                 {
@@ -185,6 +153,65 @@
                     "x": 130,
                     "y": 24.4,
                     "z": 150
+                },
+                "rotation": {
+                    "x": 0,
+                    "y": -0.707,
+                    "z": 0
+                }
+            }
+        },
+        {
+            "type": "Entity",
+            "name": "House 2",
+            "components": [
+                {
+                    "type": "Mesh",
+                    "path": "Assets/Meshes/house.obj",
+                    "materials": [
+                        {
+                            "name": "Base",
+                            "textures": [
+                                {
+                                    "path": "Assets/Textures/barrel.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "BumpMapping",
+                            "textures": [
+                                {
+                                    "path": "Assets/Textures/house_brick.jpg"
+                                },
+                                {
+                                    "path": "Assets/Textures/house_brick_n.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Base",
+                            "textures": [
+                                {
+                                    "path": "Assets/Textures/house_windows.jpg"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Base",
+                            "textures": [
+                                {
+                                    "path": "Assets/Textures/house_wood.jpg"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "transform": {
+                "position": {
+                    "x": 125,
+                    "y": 24.4,
+                    "z": 160
                 },
                 "rotation": {
                     "x": 0,
