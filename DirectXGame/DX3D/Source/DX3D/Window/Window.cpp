@@ -1,10 +1,16 @@
 #include <DX3D/Prerequisites.h>
 #include <DX3D/Window/Window.h>
 
+// Forward declare message handler from imgui_impl_win32.cpp
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 namespace DX3D
 {
 	LRESULT WndProc(HWND hwnd, UINT msg, WPARAM wparam, LPARAM lparam)
 	{
+		if (ImGui_ImplWin32_WndProcHandler(hwnd, msg, wparam, lparam))
+			return 1;
+
 		switch (msg)
 		{
 		case WM_SETFOCUS:

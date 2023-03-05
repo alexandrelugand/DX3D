@@ -9,6 +9,7 @@ namespace DX3D
 		GraphicsEngine(Game* game);
 		~GraphicsEngine();
 
+		void Initialize();
 		void Update();
 		RenderSystem* GetRenderSystem() const { return m_render.get(); }
 
@@ -30,5 +31,9 @@ namespace DX3D
 		std::set<WaterComponent*> m_waters{};
 		std::set<FogComponent*> m_fogs{};
 		std::set<TextComponent*> m_texts{};
+
+		bool show_demo_window = false;
+		bool show_another_window = false;
+		ImVec4 clear_color = ImVec4(0.45f, 0.55f, 0.60f, 1.00f);
 	};
 }

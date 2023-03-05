@@ -72,11 +72,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;DX3D/Vendor/Nlohmann/include;$(IncludePath)</IncludePath>
+    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;DX3D/Vendor/Nlohmann/include;DX3D/Vendor/imgui;DX3D/Vendor/imgui/backends;$(IncludePath)</IncludePath>
     <LibraryPath>DX3D/Vendor/DirectXTex/lib;DX3D/Vendor/DirectXTK/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;DX3D/Vendor/Nlohmann/include;$(IncludePath)</IncludePath>
+    <IncludePath>DX3D/Include;DX3D/Vendor/DirectXTex/include;DX3D/Vendor/tinyobjloader/include;DX3D/Vendor/Date/include;DX3D/Vendor/DirectXTK/include;DX3D/Vendor/Nlohmann/include;DX3D/Vendor/imgui;DX3D/Vendor/imgui/backends;$(IncludePath)</IncludePath>
     <LibraryPath>DX3D/Vendor/DirectXTex/lib;DX3D/Vendor/DirectXTK/lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -158,6 +158,7 @@
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DX3D\Source\DX3D\Game\Options.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\CameraComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\Component.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Game\Display.cpp" />
@@ -186,11 +187,18 @@
     <ClCompile Include="DX3D\Source\DX3D\Graphics\Font2D.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Resource\Font.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Resource\FontUtility.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\backends\imgui_impl_win32.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Game\main.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Resource\Texture.cpp" />
     <ClCompile Include="Game\DemoGame.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Game\World.cpp" />
-    <ClCompile Include="Game\Entity\Player.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Entity\Player.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\TransformComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\MeshComponent.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Entity\LightComponent.cpp" />
@@ -203,6 +211,7 @@
   <ItemGroup>
     <ClInclude Include="DX3D\Include\DX3D\Entity\CameraComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\Component.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Game\Options.h" />
     <ClInclude Include="DX3D\Include\DX3D\Scene\ILoader.h" />
     <ClInclude Include="DX3D\Include\DX3D\Scene\ISceneLoaderVisitor.h" />
     <ClInclude Include="DX3D\Include\DX3D\Scene\Loader.h" />
@@ -245,6 +254,14 @@
     <ClInclude Include="DX3D\Vendor\DirectXTK\include\SimpleMath.h" />
     <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteBatch.h" />
     <ClInclude Include="DX3D\Vendor\DirectXTK\include\SpriteFont.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\backends\imgui_impl_dx11.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\backends\imgui_impl_win32.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imconfig.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imgui.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imstb_truetype.h" />
     <ClInclude Include="DX3D\Vendor\Nlohmann\include\json.hpp" />
     <ClInclude Include="DX3D\Vendor\tinyobjloader\include\tiny_obj_loader.h" />
     <ClInclude Include="DX3D\Include\DX3D\Graphics\Font2D.h" />
@@ -252,7 +269,7 @@
     <ClInclude Include="DX3D\Include\DX3D\Resource\FontUtility.h" />
     <ClInclude Include="Game\DemoGame.h" />
     <ClInclude Include="DX3D\Include\DX3D\Game\World.h" />
-    <ClInclude Include="Game\Entity\Player.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Entity\Player.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\TransformComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\MeshComponent.h" />
     <ClInclude Include="DX3D\Include\DX3D\Entity\LightComponent.h" />
@@ -277,6 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="DX3D\Vendor\DirectXTex\LICENSE.txt" />
+    <Text Include="DX3D\Vendor\imgui\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.lib" />

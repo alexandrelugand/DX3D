@@ -29,7 +29,10 @@ namespace DX3D
 		m_isRunning = false;
 	}
 
-	void Game::OnCreate() { }
+	void Game::OnCreate()
+	{
+		m_graphics_engine->Initialize();
+	}
 
 	void Game::OnUpdate(float delta_time) { }
 

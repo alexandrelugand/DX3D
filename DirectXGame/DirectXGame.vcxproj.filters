@@ -97,7 +97,7 @@
     <ClCompile Include="DX3D\Source\DX3D\Resource\Material.cpp">
       <Filter>DX3D\Source\DX3D\Resource</Filter>
     </ClCompile>
-    <ClCompile Include="Game\Entity\Player.cpp">
+    <ClCompile Include="DX3D\Source\DX3D\Entity\Player.cpp">
       <Filter>Game\Entity</Filter>
     </ClCompile>
     <ClCompile Include="DX3D\Source\DX3D\Game\Win32\Win32Game.cpp">
@@ -118,6 +118,14 @@
     <ClCompile Include="DX3D\Source\DX3D\Scene\SceneManager.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Scene\RootLoader.cpp" />
     <ClCompile Include="DX3D\Source\DX3D\Scene\SceneLoaderVisitor.cpp" />
+    <ClCompile Include="DX3D\Source\DX3D\Game\Options.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_demo.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_draw.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_tables.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\backends\imgui_impl_dx11.cpp" />
+    <ClCompile Include="DX3D\Vendor\imgui\backends\imgui_impl_win32.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DX3D\Vendor\DirectXTex\include\DirectXTex.h">
@@ -189,7 +197,7 @@
     <ClInclude Include="DX3D\Include\DX3D\Graphics\PixelShader.h">
       <Filter>DX3D\Include\DX3D\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Game\Entity\Player.h">
+    <ClInclude Include="DX3D\Include\DX3D\Entity\Player.h">
       <Filter>Game\Entity</Filter>
     </ClInclude>
     <ClInclude Include="DX3D\Include\DX3D\Math\Point.h">
@@ -288,6 +296,15 @@
     <ClInclude Include="DX3D\Include\DX3D\Version.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="DX3D\Include\DX3D\Scene\Loader.h" />
+    <ClInclude Include="DX3D\Include\DX3D\Game\Options.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imconfig.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imgui.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imgui_internal.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imstb_rectpack.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imstb_textedit.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\imstb_truetype.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\backends\imgui_impl_dx11.h" />
+    <ClInclude Include="DX3D\Vendor\imgui\backends\imgui_impl_win32.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="DX3D">
@@ -413,6 +430,7 @@
     <Text Include="DX3D\Vendor\DirectXTex\LICENSE.txt">
       <Filter>DX3D\Vendor\DirectXTex</Filter>
     </Text>
+    <Text Include="DX3D\Vendor\imgui\LICENSE.txt" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="DX3D\Vendor\DirectXTex\lib\DirectXTex.lib">
