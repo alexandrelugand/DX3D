@@ -12,7 +12,7 @@ namespace DX3D
 		RenderSystem();
 
 		SwapChainPtr CreateSwapChain(HWND hwnd, const Rect& size);
-		DeviceContextPtr GetImmediateDeviceContext();
+		DeviceContextPtr GetImmediateDeviceContext() { return m_imm_device_context; }
 		VertexBufferPtr CreateVertexBuffer(void* list_vertices, uint size_vertex, uint size_list);
 		IndexBufferPtr CreateIndexBuffer(void* list_indices, uint size_list);
 		ConstantBufferPtr CreateConstantBuffer(void* buffer, uint size_buffer);
@@ -60,5 +60,6 @@ namespace DX3D
 		friend class PixelShader;
 		friend class Texture2D;
 		friend class Font2D;
+		friend class GraphicsEngine;
 	};
 }

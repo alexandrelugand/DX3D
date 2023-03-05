@@ -72,11 +72,6 @@ namespace DX3D
 		return std::make_shared<SwapChain>(this, hwnd, size);
 	}
 
-	DeviceContextPtr RenderSystem::GetImmediateDeviceContext()
-	{
-		return m_imm_device_context;
-	}
-
 	VertexBufferPtr RenderSystem::CreateVertexBuffer(void* list_vertices, uint size_vertex, uint size_list)
 	{
 		return std::make_shared<VertexBuffer>(this, list_vertices, size_vertex, size_list);

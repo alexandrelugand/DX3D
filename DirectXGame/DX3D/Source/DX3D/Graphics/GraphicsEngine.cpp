@@ -45,7 +45,6 @@ namespace DX3D
 
 	void GraphicsEngine::Initialize()
 	{
-
 		// Setup Dear ImGui context
 		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
