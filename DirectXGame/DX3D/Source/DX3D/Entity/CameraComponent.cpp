@@ -64,6 +64,6 @@ namespace DX3D
 		if (m_type == CameraType::Perspective)
 			m_projection.SetPerspectiveFovLH(m_fov, static_cast<float>(m_screen_area.Width()) / static_cast<float>(m_screen_area.Height()), m_near_plane, m_far_plane);
 		else if (m_type == CameraType::Orthogonal)
-			m_projection.SetOrthoLH(m_fov, static_cast<float>(m_screen_area.Width()) / static_cast<float>(m_screen_area.Height()), m_near_plane, m_far_plane);
+			m_projection.SetOrthoLH(static_cast<float>(m_screen_area.Width()), static_cast<float>(m_screen_area.Height()), m_near_plane, m_far_plane);
 	}
 }
