@@ -11,11 +11,13 @@ namespace DX3D
 
 		void Visit(RootLoader* loader) override;
 		void Visit(EntityLoader* loader) override;
+		void Visit(PlayerLoader* loader) override;
 		void Visit(MeshComponentLoader* loader) override;
 		void Visit(LightComponentLoader* loader) override;
 		void Visit(TerrainComponentLoader* loader) override;
 		void Visit(WaterComponentLoader* loader) override;
 		void Visit(FogComponentLoader* loader) override;
+		void Visit(CameraComponentLoader* loader) override;
 		void Visit(MaterialLoader* loader) override;
 		void Visit(TransformComponentLoader* loader) override;
 

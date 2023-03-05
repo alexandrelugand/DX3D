@@ -3,6 +3,7 @@
 #include <DX3D/Entity/FogComponent.h>
 #include <DX3D/Entity/LightComponent.h>
 #include <DX3D/Entity/MeshComponent.h>
+#include <DX3D/Entity/Player.h>
 #include <DX3D/Entity/TerrainComponent.h>
 #include <DX3D/Entity/TransformComponent.h>
 #include <DX3D/Entity/WaterComponent.h>
@@ -37,9 +38,24 @@ namespace DX3D
 			for (auto jentity_item : loader->m_json["entities"].items())
 			{
 				const auto& jentity = jentity_item.value();
-				const auto entity = m_world->CreateEntity<Entity>();
-				auto entity_loader = Loader(entity, jentity);
-				entity_loader.Accept(this);
+				if (!jentity.contains("type"))
+				{
+					DX3DException("Invalid scene file format: missing 'type' field in Entity node");
+				}
+
+				std::string type = jentity["type"];
+				if (type == "Entity")
+				{
+					const auto entity = m_world->CreateEntity<Entity>();
+					auto entity_loader = Loader(entity, jentity);
+					entity_loader.Accept(this);
+				}
+				else if (type == "Player")
+				{
+					const auto player = m_world->CreateEntity<Player>();
+					auto player_loader = Loader(player, jentity);
+					player_loader.Accept(this);
+				}
 			}
 		}
 	}
@@ -94,6 +110,44 @@ namespace DX3D
 				{
 					auto fog_component = loader->m_item->CreateComponent<FogComponent>();
 					auto component_loader = Loader(fog_component, jcomponent);
+					component_loader.Accept(this);
+				}
+			}
+		}
+
+		if (loader->m_json.contains("transform"))
+		{
+			const auto& jtransform = loader->m_json["transform"];
+			auto transform_loader = Loader(loader->m_item->GetTransform(), jtransform);
+			transform_loader.Accept(this);
+		}
+	}
+
+	void SceneLoaderVisitor::Visit(PlayerLoader* loader)
+	{
+		if (!loader->m_json.contains("type"))
+		{
+			DX3DException("Invalid scene file format: missing 'type' field in Entity node");
+		}
+
+		if (loader->m_json.contains("name"))
+			loader->m_item->SetName(loader->m_json["name"]);
+
+		if (loader->m_json.contains("components"))
+		{
+			for (auto jcomponent_item : loader->m_json["components"].items())
+			{
+				const auto& jcomponent = jcomponent_item.value();
+				if (!jcomponent.contains("type"))
+				{
+					DX3DException("Invalid scene file format: missing 'type' field in Component node");
+				}
+
+				std::string type = jcomponent["type"];
+				if (type == "Camera")
+				{
+					auto camera_component = loader->m_item->CreateComponent<CameraComponent>();
+					auto component_loader = Loader(camera_component, jcomponent);
 					component_loader.Accept(this);
 				}
 			}
@@ -215,6 +269,24 @@ namespace DX3D
 		const float start = jdata["start"];
 		const float end = jdata["end"];
 		loader->m_item->SetData(color, start, end);
+	}
+
+	void SceneLoaderVisitor::Visit(CameraComponentLoader* loader)
+	{
+		if (!loader->m_json.contains("cameraType"))
+		{
+			DX3DException("Invalid scene file format: missing 'cameraType' field in Camera component");
+		}
+
+		loader->m_item->SetType(loader->m_json["cameraType"]);
+		if (loader->m_json.contains("farPlane"))
+			loader->m_item->SetFarPlane(loader->m_json["farPlane"]);
+
+		if (loader->m_json.contains("nearPlane"))
+			loader->m_item->SetNearPlane(loader->m_json["nearPlane"]);
+
+		if (loader->m_json.contains("fov"))
+			loader->m_item->SetFov(loader->m_json["fov"]);
 	}
 
 	void SceneLoaderVisitor::Visit(MaterialLoader* loader)

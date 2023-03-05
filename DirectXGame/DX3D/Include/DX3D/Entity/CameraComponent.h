@@ -4,7 +4,7 @@
 
 namespace DX3D
 {
-	class CameraComponent final : public Component
+	class CameraComponent : public Component
 	{
 	public:
 		CameraComponent();

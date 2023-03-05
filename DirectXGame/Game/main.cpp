@@ -1,10 +1,12 @@
+#include <DX3D/Game/Options.h>
 #include "DemoGame.h"
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
 	try
 	{
-		DemoGame app;
+		auto options = DX3D::Options(argc, argv);
+		DemoGame app(options);
 		app.Run();
 	}
 	catch (const std::exception& ex)

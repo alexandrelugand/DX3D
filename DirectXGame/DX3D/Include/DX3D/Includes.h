@@ -6,6 +6,7 @@
 #include <DX3D/Entity/FogComponent.h>
 #include <DX3D/Entity/LightComponent.h>
 #include <DX3D/Entity/MeshComponent.h>
+#include <DX3D/Entity/Player.h>
 #include <DX3D/Entity/TerrainComponent.h>
 #include <DX3D/Entity/TextComponent.h>
 #include <DX3D/Entity/TransformComponent.h>

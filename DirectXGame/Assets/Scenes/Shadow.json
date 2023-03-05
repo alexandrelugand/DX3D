@@ -1,0 +1,171 @@
+{
+	"version": "1.0.0.1",
+	"entities": [
+		{
+			"type": "Player",
+			"name": "Player",
+			"components": [
+				{
+					"type": "Camera",
+					"cameraType": 1,
+					"farPlane": 7000,
+					"nearPlane": 0.01,
+					"fov": 1.33
+				}
+			],
+			"transform": {
+				"position": {
+					"x": -2,
+					"y": 2,
+					"z": 2
+				},
+				"rotation": {
+					"x": 0.524,
+					"y": 2.356,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "SkyBox",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/sphere_hq.obj",
+					"materials": [
+						{
+							"name": "SkyBox",
+							"cullmode": 1,
+							"textures": [
+								{
+									"path": "Assets/Textures/sky.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"scale": {
+					"x": 1000,
+					"y": 1000,
+					"z": 1000
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Plane",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/plane.obj",
+					"materials": [
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/sand.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Box",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/box.obj",
+					"materials": [
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/wood.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Light",
+			"components": [
+				{
+					"type": "Light",
+					"color": {
+						"r": 0.97,
+						"g": 0.79,
+						"b": 0.41,
+						"a": 1
+					}
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 0,
+					"y": 10,
+					"z": 10
+				},
+				"rotation": {
+					"x": 0.707,
+					"y": 3.14,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Box2",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/teapot.obj",
+					"materials": [
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/ground.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 0,
+					"y": 10,
+					"z": 10
+				},
+				"rotation": {
+					"x": 0.707,
+					"y": 3.14,
+					"z": 0
+				}
+			}
+		}
+	]
+}

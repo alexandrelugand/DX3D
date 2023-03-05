@@ -68,6 +68,7 @@ namespace DX3D
 
 	class World;
 	class Entity;
+	class Player;
 	class Component;
 	class TransformComponent;
 	class MeshComponent;
@@ -108,11 +109,13 @@ namespace DX3D
 	using ComponentPtr = std::unique_ptr<Component>;
 
 	using EntityLoader = Loader<Entity>;
+	using PlayerLoader = Loader<Player>;
 	using MeshComponentLoader = Loader<MeshComponent>;
 	using LightComponentLoader = Loader<LightComponent>;
 	using TerrainComponentLoader = Loader<TerrainComponent>;
 	using WaterComponentLoader = Loader<WaterComponent>;
 	using FogComponentLoader = Loader<FogComponent>;
+	using CameraComponentLoader = Loader<CameraComponent>;
 	using MaterialLoader = PtrLoader<MaterialPtr>;
 	using TransformComponentLoader = Loader<TransformComponent>;
 

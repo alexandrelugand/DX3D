@@ -22,9 +22,24 @@ namespace DX3D
 			return entity;
 		}
 
+		template <typename T>
+		T* GetEntity(const std::string& name)
+		{
+			for (const auto& entities : m_entities | std::views::values)
+			{
+				for (const auto& key : entities | std::views::keys)
+				{
+					T* entity = reinterpret_cast<T*>(key);
+					if (entity->GetName() == name)
+						return entity;
+				}
+			}
+			return nullptr;
+		}
+
 	private:
-		std::map<size_t, std::map<Entity*, EntityPtr>> m_entities;
-		std::set<Entity*> m_entities_to_destroy;
+		std::map<size_t, std::map<Entity*, EntityPtr>> m_entities{};
+		std::set<Entity*> m_entities_to_destroy{};
 		Game* m_game = nullptr;
 
 		void CreateEntityInternal(Entity* entity, size_t typeId);

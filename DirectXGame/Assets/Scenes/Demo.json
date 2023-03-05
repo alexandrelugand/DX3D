@@ -1,309 +1,338 @@
 {
-    "version": "1.0.0.1",
-    "entities": [
-        {
-            "type": "Entity",
-            "name": "SkyBox",
-            "components": [
-                {
-                    "type": "Mesh",
-                    "path": "Assets/Meshes/sphere_hq.obj",
-                    "materials": [
-                        {
-                            "id": 3,
-                            "name": "SkyBox",
-                            "cullmode": 1,
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/sky.jpg"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "transform": {
-                "scale": {
-                    "x": 1000,
-                    "y": 1000,
-                    "z": 1000
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "Sponza",
-            "components": [
-                {
-                    "type": "Mesh",
-                    "path": "Assets/Meshes/sponza_basic.obj",
-                    "materials": [
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/Sponza/sponza_arch_diff.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/Sponza/sponza_bricks_a_diff.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/Sponza/sponza_column_a_diff.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/Sponza/sponza_column_b_diff.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/Sponza/sponza_column_c_diff.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "SpecularLight",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/Sponza/sponza_flagpole_diff.jpg"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "transform": {
-                "position": {
-                    "x": 145,
-                    "y": 24.4,
-                    "z": 140
-                },
-                "rotation": {
-                    "x": 0,
-                    "y": -0.335,
-                    "z": 0
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "House",
-            "components": [
-                {
-                    "type": "Mesh",
-                    "path": "Assets/Meshes/house.obj",
-                    "materials": [
-                        {
-                            "name": "Base",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/barrel.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "BumpMapping",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/house_brick.jpg"
-                                },
-                                {
-                                    "path": "Assets/Textures/house_brick_n.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Base",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/house_windows.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Base",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/house_wood.jpg"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "transform": {
-                "position": {
-                    "x": 130,
-                    "y": 24.4,
-                    "z": 150
-                },
-                "rotation": {
-                    "x": 0,
-                    "y": -0.707,
-                    "z": 0
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "House 2",
-            "components": [
-                {
-                    "type": "Mesh",
-                    "path": "Assets/Meshes/house.obj",
-                    "materials": [
-                        {
-                            "name": "Base",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/barrel.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "BumpMapping",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/house_brick.jpg"
-                                },
-                                {
-                                    "path": "Assets/Textures/house_brick_n.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Base",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/house_windows.jpg"
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Base",
-                            "textures": [
-                                {
-                                    "path": "Assets/Textures/house_wood.jpg"
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "transform": {
-                "position": {
-                    "x": 125,
-                    "y": 24.4,
-                    "z": 160
-                },
-                "rotation": {
-                    "x": 0,
-                    "y": -0.707,
-                    "z": 0
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "Light",
-            "components": [
-                {
-                    "type": "Light",
-                    "color": {
-                        "r": 0.97,
-                        "g": 0.79,
-                        "b": 0.41,
-                        "a": 1
-                    }
-                }
-            ],
-            "transform": {
-                "rotation": {
-                    "x": 0.707,
-                    "y": -3.14,
-                    "z": 0
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "Terrain",
-            "components": [
-                {
-                    "type": "Terrain",
-                    "heightMap": {
-                        "path": "Assets/Textures/height_map.png"
-                    },
-                    "ground": {
-                        "path": "Assets/Textures/grass.jpg"
-                    },
-                    "wall": {
-                        "path": "Assets/Textures/ground.jpg"
-                    }
-                }
-            ],
-            "transform": {
-                "scale": {
-                    "x": 1,
-                    "y": 1,
-                    "z": 1
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "Water",
-            "components": [
-                {
-                    "type": "Water",
-                    "heightMap": {
-                        "path": "Assets/Textures/waveHeightMap.png"
-                    }
-                }
-            ],
-            "transform": {
-                "position": {
-                    "x": -768,
-                    "y": 15,
-                    "z": -768
-                }
-            }
-        },
-        {
-            "type": "Entity",
-            "name": "Fog",
-            "components": [
-                {
-                    "type": "Fog",
-                    "data": {
-                        "color": {
-                            "r": 1,
-                            "g": 1,
-                            "b": 1,
-                            "a": 1
-                        },
-                        "start": 250,
-                        "end": 1100
-                    }
-                }
-            ]
-        }
-    ]
+	"version": "1.0.0.1",
+	"entities": [
+		{
+			"type": "Player",
+			"name": "Player",
+			"components": [
+				{
+					"type": "Camera",
+					"cameraType": 1,
+					"farPlane": 7000,
+					"nearPlane": 0.01,
+					"fov": 1.33
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 135,
+					"y": 26,
+					"z": 154
+				},
+				"rotation": {
+					"x": 0,
+					"y": 1.57,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "SkyBox",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/sphere_hq.obj",
+					"materials": [
+						{
+							"name": "SkyBox",
+							"cullmode": 1,
+							"textures": [
+								{
+									"path": "Assets/Textures/sky.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"scale": {
+					"x": 1000,
+					"y": 1000,
+					"z": 1000
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Sponza",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/sponza_basic.obj",
+					"materials": [
+						{
+							"name": "SpecularLight",
+							"textures": [
+								{
+									"path": "Assets/Textures/Sponza/sponza_arch_diff.jpg"
+								}
+							]
+						},
+						{
+							"name": "SpecularLight",
+							"textures": [
+								{
+									"path": "Assets/Textures/Sponza/sponza_bricks_a_diff.jpg"
+								}
+							]
+						},
+						{
+							"name": "SpecularLight",
+							"textures": [
+								{
+									"path": "Assets/Textures/Sponza/sponza_column_a_diff.jpg"
+								}
+							]
+						},
+						{
+							"name": "SpecularLight",
+							"textures": [
+								{
+									"path": "Assets/Textures/Sponza/sponza_column_b_diff.jpg"
+								}
+							]
+						},
+						{
+							"name": "SpecularLight",
+							"textures": [
+								{
+									"path": "Assets/Textures/Sponza/sponza_column_c_diff.jpg"
+								}
+							]
+						},
+						{
+							"name": "SpecularLight",
+							"textures": [
+								{
+									"path": "Assets/Textures/Sponza/sponza_flagpole_diff.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 145,
+					"y": 24.4,
+					"z": 140
+				},
+				"rotation": {
+					"x": 0,
+					"y": -0.335,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "House",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/house.obj",
+					"materials": [
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/barrel.jpg"
+								}
+							]
+						},
+						{
+							"name": "BumpMapping",
+							"textures": [
+								{
+									"path": "Assets/Textures/house_brick.jpg"
+								},
+								{
+									"path": "Assets/Textures/house_brick_n.jpg"
+								}
+							]
+						},
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/house_windows.jpg"
+								}
+							]
+						},
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/house_wood.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 130,
+					"y": 24.4,
+					"z": 150
+				},
+				"rotation": {
+					"x": 0,
+					"y": -0.707,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "House 2",
+			"components": [
+				{
+					"type": "Mesh",
+					"path": "Assets/Meshes/house.obj",
+					"materials": [
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/barrel.jpg"
+								}
+							]
+						},
+						{
+							"name": "BumpMapping",
+							"textures": [
+								{
+									"path": "Assets/Textures/house_brick.jpg"
+								},
+								{
+									"path": "Assets/Textures/house_brick_n.jpg"
+								}
+							]
+						},
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/house_windows.jpg"
+								}
+							]
+						},
+						{
+							"name": "Base",
+							"textures": [
+								{
+									"path": "Assets/Textures/house_wood.jpg"
+								}
+							]
+						}
+					]
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 125,
+					"y": 24.4,
+					"z": 160
+				},
+				"rotation": {
+					"x": 0,
+					"y": -0.707,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Light",
+			"components": [
+				{
+					"type": "Light",
+					"color": {
+						"r": 0.97,
+						"g": 0.79,
+						"b": 0.41,
+						"a": 1
+					}
+				}
+			],
+			"transform": {
+				"position": {
+					"x": 10,
+					"y": 10,
+					"z": 10
+				},
+				"rotation": {
+					"x": 0.707,
+					"y": -3.14,
+					"z": 0
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Terrain",
+			"components": [
+				{
+					"type": "Terrain",
+					"heightMap": {
+						"path": "Assets/Textures/height_map.png"
+					},
+					"ground": {
+						"path": "Assets/Textures/grass.jpg"
+					},
+					"wall": {
+						"path": "Assets/Textures/ground.jpg"
+					}
+				}
+			],
+			"transform": {
+				"scale": {
+					"x": 1,
+					"y": 1,
+					"z": 1
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Water",
+			"components": [
+				{
+					"type": "Water",
+					"heightMap": {
+						"path": "Assets/Textures/waveHeightMap.png"
+					}
+				}
+			],
+			"transform": {
+				"position": {
+					"x": -768,
+					"y": 15,
+					"z": -768
+				}
+			}
+		},
+		{
+			"type": "Entity",
+			"name": "Fog",
+			"components": [
+				{
+					"type": "Fog",
+					"data": {
+						"color": {
+							"r": 1,
+							"g": 1,
+							"b": 1,
+							"a": 1
+						},
+						"start": 250,
+						"end": 1100
+					}
+				}
+			]
+		}
+	]
 }
