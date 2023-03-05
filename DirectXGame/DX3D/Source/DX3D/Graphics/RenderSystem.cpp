@@ -34,7 +34,13 @@ namespace DX3D
 		HRESULT res = 0;
 		for (uint driver_type_index = 0; driver_type_index < num_driver_types;)
 		{
-			res = D3D11CreateDevice(nullptr, driver_types[driver_type_index], nullptr, NULL, feature_levels,
+			UINT creationFlags = D3D11_CREATE_DEVICE_BGRA_SUPPORT;
+#if defined(_DEBUG)
+			// If the project is in a debug build, enable the debug layer.
+			creationFlags |= D3D11_CREATE_DEVICE_DEBUG;
+#endif
+
+			res = D3D11CreateDevice(nullptr, driver_types[driver_type_index], nullptr, creationFlags, feature_levels,
 			                        num_feature_levels,
 			                        D3D11_SDK_VERSION, &m_d3d_device, &feature_level, &m_imm_context);
 
