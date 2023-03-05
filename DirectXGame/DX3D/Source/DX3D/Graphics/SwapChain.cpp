@@ -1,4 +1,5 @@
 // ReSharper disable CppClangTidyClangDiagnosticLanguageExtensionToken
+#include <DirectXTex.h>
 #include <DX3D/Graphics/RenderSystem.h>
 #include <DX3D/Graphics/SwapChain.h>
 
@@ -99,6 +100,23 @@ namespace DX3D
 		if (FAILED(res))
 		{
 			DX3DException("Failed to create depth / stencil view.");
+		}
+	}
+
+	void SwapChain::SaveToFile(const wchar_t* file_path)
+	{
+		ID3D11Texture2D* p_buffer = nullptr;
+		HRESULT res = m_swap_chain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<void**>(&p_buffer));
+		if (SUCCEEDED(res))
+		{
+			DirectX::ScratchImage image{};
+			res = CaptureTexture(m_render->m_d3d_device.Get(), m_render->m_imm_context.Get(), p_buffer, image);
+			if (SUCCEEDED(res))
+			{
+				SaveToDDSFile(image.GetImages(),
+				              image.GetImageCount(), image.GetMetadata(),
+				              DirectX::DDS_FLAGS_NONE, file_path);
+			}
 		}
 	}
 }

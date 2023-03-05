@@ -11,6 +11,7 @@ namespace DX3D
 		void Present(bool vsync) const;
 		void Resize(const Rect& size);
 		void SetFullScreen(bool fullscreen, const Rect& size);
+		void SaveToFile(const wchar_t* file_path);
 
 	private:
 		ComPtr<IDXGISwapChain> m_swap_chain = nullptr;
@@ -21,5 +22,6 @@ namespace DX3D
 		void ReloadBuffers(const Rect& size);
 
 		friend class DeviceContext;
+		friend class GraphicsEngine;
 	};
 }

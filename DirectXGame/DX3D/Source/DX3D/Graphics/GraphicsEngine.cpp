@@ -161,6 +161,9 @@ namespace DX3D
 			context->DrawIndexedTriangleList(w->m_mesh_ib->GetSizeIndexList(), 0, 0);
 		}
 
+		if (m_game->GetInputSystem()->IsKeyDown(Key::PrintScreen))
+			swap_chain->SaveToFile(L"PrintScreen.dds");
+
 		//Rendering UI components
 		//-----------------------
 

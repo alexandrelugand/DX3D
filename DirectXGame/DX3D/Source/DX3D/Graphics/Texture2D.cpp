@@ -3,21 +3,23 @@
 #include <DX3D/Graphics/RenderSystem.h>
 #include <DX3D/Graphics/Texture2D.h>
 
+using namespace DirectX;
+
 namespace DX3D
 {
 	Texture2D::Texture2D(RenderSystem* system, const wchar_t* full_path)
 		: m_system(system)
 	{
-		DirectX::ScratchImage image_data;
-		HRESULT res = LoadFromWICFile(full_path, DirectX::WIC_FLAGS_IGNORE_SRGB, nullptr, image_data);
+		ScratchImage image_data;
+		HRESULT res = LoadFromWICFile(full_path, WIC_FLAGS_IGNORE_SRGB, nullptr, image_data);
 
 		if (FAILED(res))
 		{
 			DX3DException("Failed to create scratch image data.");
 		}
 
-		DirectX::ScratchImage mip_chain = {};
-		GenerateMipMaps(image_data.GetImages(), image_data.GetImageCount(), image_data.GetMetadata(), DirectX::TEX_FILTER_DEFAULT | DirectX::TEX_FILTER_SEPARATE_ALPHA, 0, mip_chain);
+		ScratchImage mip_chain = {};
+		GenerateMipMaps(image_data.GetImages(), image_data.GetImageCount(), image_data.GetMetadata(), TEX_FILTER_DEFAULT | TEX_FILTER_SEPARATE_ALPHA, 0, mip_chain);
 
 		res = CreateTexture(m_system->m_d3d_device.Get(), mip_chain.GetImages(), mip_chain.GetImageCount(), mip_chain.GetMetadata(), &m_texture);
 		if (FAILED(res))
@@ -51,10 +53,10 @@ namespace DX3D
 			DX3DException("Failed to create shader resource view.");
 		}
 
-		m_size = Rect(static_cast<int>(image_data.GetMetadata().width), static_cast<int>(image_data.GetMetadata().height));
+		m_size = ::Rect(static_cast<int>(image_data.GetMetadata().width), static_cast<int>(image_data.GetMetadata().height));
 	}
 
-	Texture2D::Texture2D(RenderSystem* system, const Rect& size, Type type)
+	Texture2D::Texture2D(RenderSystem* system, const ::Rect& size, Type type)
 		: m_system(system), m_type(type), m_size(size)
 	{
 		D3D11_TEXTURE2D_DESC tex_desc = {};
@@ -119,4 +121,16 @@ namespace DX3D
 	}
 
 	Texture2D::~Texture2D() {}
+
+	void Texture2D::SaveToFile(const wchar_t* file_path) const
+	{
+		ScratchImage image{};
+		HRESULT res = CaptureTexture(m_system->m_d3d_device.Get(), m_system->m_imm_context.Get(), m_texture.Get(), image);
+		if (SUCCEEDED(res))
+		{
+			SaveToDDSFile(image.GetImages(),
+				image.GetImageCount(), image.GetMetadata(),
+				DDS_FLAGS_NONE, file_path);
+		}
+	}
 }

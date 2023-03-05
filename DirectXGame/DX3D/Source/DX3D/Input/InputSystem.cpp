@@ -3,7 +3,12 @@
 
 namespace DX3D
 {
-	InputSystem::InputSystem() {}
+	InputSystem::InputSystem()
+	{
+		POINT current_mouse_pos = {};
+		GetCursorPos(&current_mouse_pos);
+		m_old_mouse_pos = Vector2D(static_cast<float>(current_mouse_pos.x), static_cast<float>(current_mouse_pos.y));
+	}
 
 	InputSystem::~InputSystem() {}
 
@@ -107,6 +112,8 @@ namespace DX3D
 			keyWin = VK_MBUTTON;
 		else if (key == Key::RightMouse)
 			keyWin = VK_RBUTTON;
+		else if (key == Key::PrintScreen)
+			keyWin = VK_SNAPSHOT;
 
 		return keyWin;
 	}

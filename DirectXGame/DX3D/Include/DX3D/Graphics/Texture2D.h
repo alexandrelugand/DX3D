@@ -20,6 +20,8 @@ namespace DX3D
 		const Rect& GetSize() const { return m_size; }
 		Type GetType() const { return m_type; }
 
+		void SaveToFile(const wchar_t* file_path) const;
+
 	private:
 		ComPtr<ID3D11Resource> m_texture = nullptr;
 		ComPtr<ID3D11ShaderResourceView> m_srv = nullptr;
